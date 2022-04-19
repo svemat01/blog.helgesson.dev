@@ -1,0 +1,31 @@
+<script lang="ts">
+	import '$lib/styles/blog.scss';
+
+	import Header from '$lib/components/Header.svelte';
+	import Wrapper from '$lib/components/Wrapper.svelte';
+	import Main from '$lib/components/Main.svelte';
+
+	import { page } from '$app/stores';
+	import BlogTitle from '$lib/components/BlogTitle.svelte';
+	import { formatDate } from '$lib/util/formatDate';
+
+	export let title;
+	export let created;
+
+	const date = formatDate(created);
+
+	const route = $page.routeId.split('/').at(-1);
+</script>
+
+<Wrapper>
+	<Header title={route} />
+
+	<BlogTitle {date} {title} />
+
+	<Main class="blog">
+		<slot />
+	</Main>
+</Wrapper>
+
+<style lang="scss">
+</style>

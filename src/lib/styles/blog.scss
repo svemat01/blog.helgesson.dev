@@ -1,0 +1,91 @@
+@import 'prism-vs-code-dark.css';
+
+main.blog {
+	font-size: 1.76rem;
+
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+
+	section {
+		display: flex;
+		gap: 1rem;
+		flex-direction: column;
+	}
+
+	// Headings
+	h2 {
+		font-size: 2.5rem;
+		font-weight: 600;
+		
+		// margin-top: 3rem;
+		// margin-bottom: 1rem;
+
+		&::before {
+			text-align: right;
+
+			content: '#';
+
+			position: initial;
+
+			margin-right: 0.4rem;
+
+			color: $accent-color;
+		}
+	}
+
+	h3 {
+		font-size: 2.1rem;
+		font-weight: 600;
+		
+		// margin-top: 2.5rem;
+		// margin-bottom: 1rem;
+
+		&::before {
+			text-align: right;
+
+			content: '##';
+
+			position: initial;
+
+			margin-right: 0.4rem;
+
+			color: $accent-color;
+		}
+	}
+
+	h4 {
+		font-size: 1.9rem;
+		font-weight: 600;
+		
+		// margin-top: 2rem;
+		// margin-bottom: 1rem;
+
+		// &::before {
+		// 	text-align: right;
+
+		// 	content: '###';
+
+		// 	position: initial;
+
+		// 	margin-right: 0.4rem;
+
+		// 	color: $accent-color;
+		// }
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		margin-top: 1.76rem;
+	}
+
+	// Lists
+	ul, li {
+		list-style-type: disc;
+		
+		margin-left: 1rem;
+	}
+
+	p {
+		line-height: 2rem;
+	}
+}
