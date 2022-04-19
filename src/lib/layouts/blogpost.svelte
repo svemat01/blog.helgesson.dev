@@ -14,7 +14,10 @@
 
 	const date = formatDate(created);
 
-	const route = $page.routeId.split('/').at(-1);
+	let route = '?';
+	if ($page.routeId) {
+		$page.routeId.split('/').at(-1);
+	}
 </script>
 
 <Wrapper>

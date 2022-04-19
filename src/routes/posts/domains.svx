@@ -34,7 +34,7 @@ tags: {
         textColor: "black"
     }
 }
-hidden: false
+hidden: true
 ---
 Everyone knows the normal one or two factor authentication process we all had to go through.
 Let's be real, it's boring and takes a long time to complete, especially if you have 2FA set up via SMS or E-Mail. In that case, sometimes it takes even longer because you won't get that sms/mail for the next 30 minutes (looking at you Microsoft).
