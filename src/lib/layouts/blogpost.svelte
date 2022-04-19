@@ -13,11 +13,10 @@
 	export let created;
 
 	const date = formatDate(created);
+	
+	const routeSplit = $page.routeId.split('/')
 
-	let route = '?';
-	if ($page.routeId) {
-		$page.routeId.split('/').at(-1);
-	}
+	const route = routeSplit[routeSplit.length - 1]
 </script>
 
 <Wrapper>
