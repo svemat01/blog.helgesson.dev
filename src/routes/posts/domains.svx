@@ -13,26 +13,6 @@ tags: {
         color: "aqua",
         textColor: "black"
     },
-    "Typescript3": {
-        color: "aqua",
-        textColor: "black"
-    },
-    "Typescript4": {
-        color: "aqua",
-        textColor: "black"
-    },
-    "Typescript22": {
-        color: "aqua",
-        textColor: "black"
-    },
-    "Typescript33": {
-        color: "aqua",
-        textColor: "black"
-    },
-    "Typescript44": {
-        color: "aqua",
-        textColor: "black"
-    }
 }
 hidden: true
 ---
