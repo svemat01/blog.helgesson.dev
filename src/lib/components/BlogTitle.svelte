@@ -9,7 +9,7 @@
 		<p>{date}</p>
 	</div>
 
-	<hr />
+	<hr class="solid"/>
 </div>
 
 <style lang="scss">
@@ -32,10 +32,13 @@
                 color: $disabled-color;
             }
 		}
+        
+        hr.solid {
+			border: 0;
+			border-top: 0.4rem solid $disabled-color;
 
-        hr {
-            margin-top: 0.5rem;
+			margin-top: 0.5rem;
             margin-bottom: 1.76rem;
-        }
+		}
 	}
 </style>
