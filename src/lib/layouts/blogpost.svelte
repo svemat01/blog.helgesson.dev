@@ -1,3 +1,8 @@
+<script lang="ts" context="module">
+	import Link from '$lib/components/Link.svelte';
+	export { Link as a };
+</script>
+
 <script lang="ts">
 	import '$lib/styles/blog.scss';
 
@@ -12,17 +17,19 @@
 	export let title;
 	export let created;
 
-	const date = formatDate(created);
-	
-	const routeSplit = $page.routeId.split('/')
+	export let tags;
 
-	const route = routeSplit[routeSplit.length - 1]
+	const date = formatDate(created);
+
+	const routeSplit = $page.routeId.split('/');
+
+	const route = routeSplit[routeSplit.length - 1];
 </script>
 
 <Wrapper>
 	<Header title={route} />
 
-	<BlogTitle {date} {title} />
+	<BlogTitle {date} {title} {tags} />
 
 	<Main class="blog">
 		<slot />
