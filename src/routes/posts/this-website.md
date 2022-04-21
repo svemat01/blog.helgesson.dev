@@ -10,7 +10,7 @@ tags: {
         textColor: "black"
     },
 }
-hidden: false
+hidden: true
 ---
 Making this website was a very interesting process including me learning many new ways of website development. Our usual way of making websites has often been to just create a new repo and throw in a couple of html, css and js files, but today's internet is changing, we want more advanced websites with high levels of interactivity.
 
