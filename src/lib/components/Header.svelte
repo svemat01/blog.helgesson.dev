@@ -22,6 +22,8 @@
 		margin-inline: auto; */
 		margin-top: 5rem;
 
+		overflow-wrap: anywhere;
+
 		nav {
 			display: flex;
 			flex-direction: row;

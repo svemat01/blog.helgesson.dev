@@ -7,6 +7,8 @@ main.blog {
 	gap: 1rem;
 	flex-direction: column;
 
+	overflow-wrap: anywhere;
+
 	section {
 		display: flex;
 		gap: 1rem;
