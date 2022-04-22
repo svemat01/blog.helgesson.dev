@@ -15,11 +15,11 @@
 	import { formatDate } from '$lib/util/formatDate';
 
 	export let title;
-	export let created;
+	export let published;
 
 	export let tags;
 
-	const date = formatDate(created);
+	const date = formatDate(published);
 
 	const routeSplit = $page.routeId.split('/');
 

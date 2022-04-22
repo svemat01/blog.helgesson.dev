@@ -9,7 +9,7 @@
 
 	const { tags } = metadata;
 
-	const dateString = formatDate(metadata.created);
+	const dateString = formatDate(metadata.published);
 
 	console.log({ post });
 </script>
@@ -57,7 +57,7 @@
 
 				position: absolute;
 
-				left: -1.5rem;
+				left: -1.6rem;
 			}
 		}
 

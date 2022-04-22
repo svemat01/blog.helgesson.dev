@@ -4,6 +4,9 @@ import remarkGfm from 'remark-gfm';
 import remarkSectionize from 'remark-sectionize';
 import remarkContainers from 'remark-containers';
 
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+
 const config = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx'],
 
@@ -25,9 +28,9 @@ const config = defineConfig({
 						type: 'warning',
 						element: 'div',
 						transform: function (node, config, tokenize) {
-							console.log({config});
+							console.log({ config });
 							node.data.hProperties = {
-								className: `remark-container warning ${config}` 
+								className: `remark-container warning ${config}`
 							};
 							node.children.unshift({
 								type: 'p',
@@ -46,7 +49,7 @@ const config = defineConfig({
 						element: 'div',
 						transform: function (node, config, tokenize) {
 							node.data.hProperties = {
-								className: `remark-container tip ${config}` 
+								className: `remark-container tip ${config}`
 							};
 							node.children.unshift({
 								type: 'p',
@@ -65,7 +68,7 @@ const config = defineConfig({
 		]
 	],
 
-	rehypePlugins: []
+	rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 });
 
 export default config;

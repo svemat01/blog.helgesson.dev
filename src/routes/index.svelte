@@ -9,7 +9,7 @@
 		posts
 			// .sort((a, b) => a.metadata.title.localeCompare(b.metadata.title))
 			.sort(
-				(a, b) => new Date(b.metadata.created).getTime() - new Date(a.metadata.created).getTime()
+				(a, b) => new Date(b.metadata.published).getTime() - new Date(a.metadata.published).getTime()
 			);
 
 		return { props: { posts } };

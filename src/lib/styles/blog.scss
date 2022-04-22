@@ -23,16 +23,22 @@ main.blog {
 		// margin-top: 3rem;
 		// margin-bottom: 1rem;
 
-		&::before {
-			text-align: right;
+		.icon-link {
+			&::before {
+				text-align: right;
 
-			content: '#';
+				content: '#';
 
-			position: initial;
+				position: initial;
 
-			margin-right: 0.6rem;
+				margin-right: 0.6rem;
 
-			color: $accent-color;
+				color: $accent-color;
+			}
+
+			&:hover {
+				filter: brightness(0.8);
+			}
 		}
 	}
 
@@ -43,16 +49,22 @@ main.blog {
 		// margin-top: 2.5rem;
 		// margin-bottom: 1rem;
 
-		&::before {
-			text-align: right;
+		.icon-link {
+			&::before {
+				text-align: right;
 
-			content: '##';
+				content: '##';
 
-			position: initial;
+				position: initial;
 
-			margin-right: 0.6rem;
+				margin-right: 0.6rem;
 
-			color: $accent-color;
+				color: $accent-color;
+			}
+
+			&:hover {
+				filter: brightness(0.8);
+			}
 		}
 	}
 
@@ -118,7 +130,8 @@ main.blog {
 		max-width: 100px;
 	}
 
-	code, code * {
+	code,
+	code * {
 		font-size: 1.76rem;
 		font-family: 'JetBrains Mono', monospace !important;
 	}
@@ -205,9 +218,9 @@ main.blog {
 	}
 
 	// remark Containers
-	.remark-container{
+	.remark-container {
 		border-radius: 0.5rem;
-	
+
 		width: fit-content;
 
 		padding: 2rem 2.5rem;
@@ -218,7 +231,7 @@ main.blog {
 
 		p.title {
 			margin-top: 0;
-	
+
 			font-weight: 600;
 			font-size: 1.9rem;
 		}
@@ -226,9 +239,9 @@ main.blog {
 		&.warning {
 			// border: 0.4rem solid #fc9919;
 			border-left: 0.6rem solid $cont-warning-color;
-	
+
 			background-color: $cont-warning-background;
-	
+
 			p.title {
 				color: $cont-warning-color;
 			}
@@ -237,14 +250,12 @@ main.blog {
 		&.tip {
 			// border: 0.4rem solid #fc9919;
 			border-left: 0.6rem solid $cont-tip-color;
-	
+
 			background-color: $cont-tip-background;
-	
+
 			p.title {
 				color: $cont-tip-color;
 			}
 		}
-
 	}
-	
 }
