@@ -2,22 +2,15 @@
 title: Example page
 description: Lorem Ipsum
 author: Svemat
-created: 2022-03-17 16:59:22
+published: 2022-03-17 16:59:22
 modified: 2022-03-17 16:29:22
 tags: {
-    "test": "hello2"
+    "Example": {
+        color: "aqua",
+        textColor: "black"
+    },
 }
-hidden: false
----
-__Advertisement :)__
-
-- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
-  resize in browser.
-- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly
-  i18n with plurals support and easy syntax.
-
-You will like those projects!
-
+hidden: true
 ---
 
 # h1 Heading 8-)
