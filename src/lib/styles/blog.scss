@@ -98,6 +98,12 @@ main.blog {
 	}
 
 	// Lists
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
 	ul,
 	li {
 		list-style-type: disc;
