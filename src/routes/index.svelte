@@ -17,7 +17,8 @@
 </script>
 
 <script lang="ts">
-	import Header from '$lib/components/Header.svelte';
+	import BaseHead from '$lib/components/BaseHead.svelte';
+import Header from '$lib/components/Header.svelte';
 	import Main from '$lib/components/Main.svelte';
 	import PostCard from '$lib/components/PostCard.svelte';
 	import PostListContainer from '$lib/components/PostListContainer.svelte';
@@ -40,6 +41,8 @@
 
 	console.log({ tags });
 </script>
+
+<BaseHead title="blog.helgesson.dev" description="" permalink="https://blog.helgesson.dev" />
 
 <Wrapper>
 	<Header />

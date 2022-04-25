@@ -13,8 +13,10 @@
 	import { page } from '$app/stores';
 	import BlogTitle from '$lib/components/BlogTitle.svelte';
 	import { formatDate } from '$lib/util/formatDate';
+	import BaseHead from '$lib/components/BaseHead.svelte';
 
 	export let title;
+	export let description;
 	export let published;
 
 	export let tags;
@@ -26,6 +28,8 @@
 	const route = routeSplit[routeSplit.length - 1];
 </script>
 
+<BaseHead {title} {description} permalink={$page.routeId} />
+
 <Wrapper>
 	<Header title={route} />
 
@@ -35,6 +39,3 @@
 		<slot />
 	</Main>
 </Wrapper>
-
-<style lang="scss">
-</style>
