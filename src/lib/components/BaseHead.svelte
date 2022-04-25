@@ -1,8 +1,15 @@
 <script lang="ts">
     export let title: string;
-    export let description: string;
+    export let description: string | undefined = undefined;
     export let permalink: string;
     export let imageUrl: string = "https://blog.helgesson.dev/banner.png"
+
+	const endDescription = `Jakob Helgesson | Super Stack Developer @ 17 Years of age
+	📃: jakobhelgesson.com
+	📋: blog.helgesson.dev
+	✉️: jakob@helgesson.dev`
+
+	const desc = description ? `${description}\n===\n${endDescription}` : endDescription;
 </script>
 
 

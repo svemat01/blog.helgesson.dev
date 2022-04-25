@@ -5,11 +5,12 @@
 
 	export const load: Load = async ({ fetch }) => {
 		const posts: PostWithMeta[] = await fetch('/posts.json').then((res) => res.clone().json());
-		
+
 		posts
 			// .sort((a, b) => a.metadata.title.localeCompare(b.metadata.title))
 			.sort(
-				(a, b) => new Date(b.metadata.published).getTime() - new Date(a.metadata.published).getTime()
+				(a, b) =>
+					new Date(b.metadata.published).getTime() - new Date(a.metadata.published).getTime()
 			);
 
 		return { props: { posts } };
@@ -18,7 +19,7 @@
 
 <script lang="ts">
 	import BaseHead from '$lib/components/BaseHead.svelte';
-import Header from '$lib/components/Header.svelte';
+	import Header from '$lib/components/Header.svelte';
 	import Main from '$lib/components/Main.svelte';
 	import PostCard from '$lib/components/PostCard.svelte';
 	import PostListContainer from '$lib/components/PostListContainer.svelte';
@@ -26,23 +27,20 @@ import Header from '$lib/components/Header.svelte';
 
 	export let posts: PostWithMeta[];
 
-	const tags = posts.reduce(
-		(tags, post) => {
-			Object.keys(post.metadata.tags).forEach((tag) => {
-				tags[tag] = post.metadata.tags[tag];
-			});
+	const tags = posts.reduce((tags, post) => {
+		Object.keys(post.metadata.tags).forEach((tag) => {
+			tags[tag] = post.metadata.tags[tag];
+		});
 
-			console.log({meta: post.metadata});
+		console.log({ meta: post.metadata });
 
-			return tags;
-		},
-		{} as Post['tags']
-	);
+		return tags;
+	}, {} as Post['tags']);
 
 	console.log({ tags });
 </script>
 
-<BaseHead title="blog.helgesson.dev" description="" permalink="https://blog.helgesson.dev" />
+<BaseHead title="Jakob Helgesson's Devblog" permalink="https://blog.helgesson.dev" />
 
 <Wrapper>
 	<Header />
