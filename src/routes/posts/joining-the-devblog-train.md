@@ -116,13 +116,13 @@ So what did I end up using to make this work other than SvelteKit itself? Good q
   * [Roboto](https://fonts.google.com/specimen/Roboto)
   * [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
 
-## The end I suppose ⌛
+## Where we are now
 
 Well here I am, a couple of months later and I'm still working on this blog :D
 
 The journey to this point has been amazing by getting to learn both new Languages and technologies, but also taking part of the communities surrounding these things. This site has so much more coming for it and hopefully many more blog posts will be written in the future.
 
-Hopefully you'll stay with me and follow me thru out the amazing career I have laying in the future, which I can't wait to take part of. I hope you enjoy the journey and if you have any questions or comments feel free to reach out to me via [Mail](mailto:jakob@helgesson.dev) or other contact information available on my portfolio [here (jakobhelgesson.com)](https://jakob.helgesson.com).
+Hopefully you'll stay with me and follow me thru out the amazing career I have laying in the future, which I can't wait to take part of. I hope you enjoy the journey and if you have any questions or comments feel free to reach out to me via [E-Mail (jakob@helgesson.dev)](mailto:jakob@helgesson.dev) or other contact information available on my [portfolio (jakobhelgesson.com)](https://jakobhelgesson.com).
 
 Thanks for reading! You are awesome ❤️
 
