@@ -17,9 +17,9 @@
 		display: flex;
 		flex-direction: column;
 
-		/* width: min(100% - 5rem, 1000px);
+		width: calc(100% - 1rem);
 
-		margin-inline: auto; */
+		margin-inline: auto;
 		margin-top: 5rem;
 
 		overflow-wrap: anywhere;

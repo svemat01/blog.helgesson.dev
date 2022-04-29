@@ -9,6 +9,6 @@
 
         margin-inline: auto;
 
-        width: min(100% - 5rem, 900px);
+        width: min(100% - 2rem, 900px);
     }
 </style>

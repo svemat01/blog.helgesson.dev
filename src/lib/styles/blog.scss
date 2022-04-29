@@ -11,7 +11,7 @@ main.blog {
 
 	section {
 		display: flex;
-		gap: 1rem;
+		gap: 1.25rem;
 		flex-direction: column;
 	}
 
@@ -230,6 +230,7 @@ main.blog {
 		border-radius: 0.5rem;
 
 		width: fit-content;
+		max-width: 100%;
 
 		padding: 2rem 2.5rem;
 
