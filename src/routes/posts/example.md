@@ -261,7 +261,7 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 TEST
 :::
 
-::: tip
+::: note
 *here be dragons once upon a time*
 :::
 

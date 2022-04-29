@@ -45,11 +45,11 @@ const config = defineConfig({
 						}
 					},
 					{
-						type: 'tip',
+						type: 'note',
 						element: 'div',
 						transform: function (node, config, tokenize) {
 							node.data.hProperties = {
-								className: `remark-container tip ${config}`
+								className: `remark-container note ${config}`
 							};
 							node.children.unshift({
 								type: 'p',
@@ -59,7 +59,7 @@ const config = defineConfig({
 										className: 'title'
 									}
 								},
-								children: tokenize('TIP')
+								children: tokenize('NOTE')
 							});
 						}
 					}
