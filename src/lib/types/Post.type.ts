@@ -1,24 +1,24 @@
-type Credits = { role: string, name: string }[];
+type Credits = { role: string; name: string }[];
 
 export type TagType = {
-    [key: string]: {
-        color: string;
-        textColor?: string;
-    },
-}
+	[key: string]: {
+		color: string;
+		textColor?: string;
+	};
+};
 
 export type Post = {
-    title: string,
-    description?: string,
-    author: string,
-    tags?: TagType,
-    credits?: Credits,
-    published: Date,
-    modified: Date,
-    hidden: boolean
-}
+	title: string;
+	description?: string;
+	author: string;
+	tags?: TagType;
+	credits?: Credits;
+	published: Date;
+	modified: Date;
+	hidden: boolean;
+};
 
 export type PostWithMeta = {
-    route: string,
-    metadata: Post,
+	route: string;
+	metadata: Post;
 };

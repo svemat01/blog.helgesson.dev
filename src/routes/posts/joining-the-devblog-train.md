@@ -1,15 +1,10 @@
 ---
-title: Joining in on the DevBlog train 
+title: Joining in on the DevBlog train
 description: Simple right... or is it? Let's find out!
 author: Jakob Helgesson
 published: 2022-04-21
 modified: 2022-04-21
-tags: {
-    "Frontend": {
-        color: "#f3a51f",
-        textColor: "black"
-    },
-}
+tags: { 'Frontend': { color: '#f3a51f', textColor: 'black' } }
 hidden: false
 ---
 
@@ -46,7 +41,7 @@ The journey here was kinda special but very fun!
 
 When creating a blog in todays developer world there are a huge amount of options. At first I didn't know what to go with [Astro](https://astro.build) per <Profile name='luc' />'s recommendation.
 However as you may or may not notice, this website is no longer built in Astro, but more on what I did instead later.
-What I did know was that I wanted a statically generated website so any SSR *(or Server Side Rendering)* based systems was of the table.
+What I did know was that I wanted a statically generated website so any SSR _(or Server Side Rendering)_ based systems was of the table.
 
 ### SSG vs SSR
 
@@ -71,13 +66,13 @@ So what's the drawback here then? The client now has to pickup the work that the
 
 #### Choosing between SSG and SSR
 
-Choosing between SSG and SSR *(or others methods)* is a bit of a tricky one. It depends on the project and the project's needs.
+Choosing between SSG and SSR _(or others methods)_ is a bit of a tricky one. It depends on the project and the project's needs.
 
 For me personally I think SSG is the best choice as it's the easiest in my case to use.
 
 ### Astro
 
-What is [Astro](https://astro.build)? Astro is an SSG *(or Static Site Generator)* which has the goal of outputting as little as possible javascript, in some cases even none.
+What is [Astro](https://astro.build)? Astro is an SSG _(or Static Site Generator)_ which has the goal of outputting as little as possible javascript, in some cases even none.
 
 Astro is really awesome in the way it allows you to combine multiple different frameworks in the same projects.
 
@@ -88,7 +83,6 @@ After my amazing time with the super loving community over at the [Astro discord
 Astro is still a very interesting project that I will continue to keep my eyes on and will probably go back to in the future when it's more mature. But now I had to choose what I was going to work with instead.
 
 <!-- My choice ended up being between [Next.js](https://nextjs.org) with React and [SvelteKit](https://sveltekit.org) with Svelte. I ended up with Svelte as I was more familiar with it and it was a lot easier to get started with. -->
-
 
 ### SvelteKit and Svelte
 
@@ -104,17 +98,17 @@ Well SvelteKit is kinda like how Next.js is for React but for Svelte. It allows 
 
 So what did I end up using to make this work other than SvelteKit itself? Good question, get ready cuz here it comes!
 
-* **[SvelteKit](https://sveltekit.org)** together with **[Svelte](https://svelte.dev)**
-* **[MdSvex](https://mdsvex.pngwn.io/)** Svelte in markdown, together with some **[remark](https://github.com/remarkjs/remark)** and **[rehype](https://github.com/rehypejs/rehype)** plugins
-  * **[remark-gfm](https://github.com/remarkjs/remark-gfm)** Support github flavored markdown
-  * **[remark-sectionize](https://github.com/jake-low/remark-sectionize)** Group headings and paragraphs together as sections
-  * **[remark-containers](https://github.com/Nevenall/remark-containers)** Custom containers for warnings and etc
-  * **[rehype-slug](https://github.com/rehypejs/rehype-slug)** Add id's to headings for linking
-  * **[rehype-autolink-headings](https://github.com/rehypejs/rehype-autolink-headings)** Make headers link to themself
-* **[Typescript](https://www.typescriptlang.org/)** and **[SCSS](https://sass-lang.com/)** to make it easier to work with
-* **Fonts**
-  * [Roboto](https://fonts.google.com/specimen/Roboto)
-  * [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
+- **[SvelteKit](https://sveltekit.org)** together with **[Svelte](https://svelte.dev)**
+- **[MdSvex](https://mdsvex.pngwn.io/)** Svelte in markdown, together with some **[remark](https://github.com/remarkjs/remark)** and **[rehype](https://github.com/rehypejs/rehype)** plugins
+  - **[remark-gfm](https://github.com/remarkjs/remark-gfm)** Support github flavored markdown
+  - **[remark-sectionize](https://github.com/jake-low/remark-sectionize)** Group headings and paragraphs together as sections
+  - **[remark-containers](https://github.com/Nevenall/remark-containers)** Custom containers for warnings and etc
+  - **[rehype-slug](https://github.com/rehypejs/rehype-slug)** Add id's to headings for linking
+  - **[rehype-autolink-headings](https://github.com/rehypejs/rehype-autolink-headings)** Make headers link to themself
+- **[Typescript](https://www.typescriptlang.org/)** and **[SCSS](https://sass-lang.com/)** to make it easier to work with
+- **Fonts**
+  - [Roboto](https://fonts.google.com/specimen/Roboto)
+  - [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
 
 ## Where we are now
 
