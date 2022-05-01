@@ -18,6 +18,7 @@
 	export let title;
 	export let description;
 	export let published;
+	export let banner;
 
 	export let tags;
 
@@ -32,7 +33,7 @@
 	}
 </script>
 
-<BaseHead {title} {description} permalink={$page.routeId} />
+<BaseHead {title} {description} permalink={$page.routeId} imageUrl={banner} />
 
 <Wrapper>
 	<Header title={route} />

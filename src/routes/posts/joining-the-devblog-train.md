@@ -4,6 +4,7 @@ description: Simple right... or is it? Let's find out!
 author: Jakob Helgesson
 published: 2022-04-21
 modified: 2022-04-21
+banner: https://blog.helgesson.dev/post-banners/devblog-train.png
 tags: { 'Frontend': { color: '#f3a51f', textColor: 'black' } }
 hidden: false
 ---
