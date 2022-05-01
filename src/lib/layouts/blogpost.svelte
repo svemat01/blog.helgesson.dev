@@ -26,6 +26,10 @@
 	const routeSplit = $page.routeId.split('/');
 
 	const route = routeSplit[routeSplit.length - 1];
+
+	if (!title || !description || !published) {
+		throw new Error('Blog post must have title, description and published date');
+	}
 </script>
 
 <BaseHead {title} {description} permalink={$page.routeId} />

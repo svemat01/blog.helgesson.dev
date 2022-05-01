@@ -6,13 +6,6 @@
 	export const load: Load = async ({ fetch }) => {
 		const posts: PostWithMeta[] = await fetch('/posts.json').then((res) => res.clone().json());
 
-		posts
-			// .sort((a, b) => a.metadata.title.localeCompare(b.metadata.title))
-			.sort(
-				(a, b) =>
-					new Date(b.metadata.published).getTime() - new Date(a.metadata.published).getTime()
-			);
-
 		return { props: { posts } };
 	};
 </script>
@@ -32,12 +25,8 @@
 			tags[tag] = post.metadata.tags[tag];
 		});
 
-		console.log({ meta: post.metadata });
-
 		return tags;
 	}, {} as Post['tags']);
-
-	console.log({ tags });
 </script>
 
 <BaseHead title="Jakob Helgesson's Devblog" permalink="https://blog.helgesson.dev" />

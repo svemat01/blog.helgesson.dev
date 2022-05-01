@@ -13,8 +13,8 @@ export type Post = {
 	author: string;
 	tags?: TagType;
 	credits?: Credits;
-	published: Date;
-	modified: Date;
+	published: number;
+	modified: number;
 	hidden: boolean;
 };
 
