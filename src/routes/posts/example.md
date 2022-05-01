@@ -130,6 +130,16 @@ var foo = function (bar) { // dashfjkdsahfkjkfdfasjhkfdasjhkfadsjhkfdjhkfsdjhkfd
 console.log(foo(5));
 ```
 
+```fs
+📂 src
+┗ 📂 routes
+  ┣ 📂 blog
+  ┃ ┗ 📜 index.svelte
+  ┣ 📜 about.svelte
+  ┣ 📜 contact.svelte
+  ┗ 📜 index.svelte
+```
+
 ## Tables
 
 | Option | Description                                                               | tesd  |

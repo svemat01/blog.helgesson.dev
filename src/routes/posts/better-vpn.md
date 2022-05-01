@@ -46,15 +46,25 @@ This has the following main functionalities.
 * Public key box, stores all the public encryption keys for the nodes to be able to communicate.
 * Configure ACLs (Access Control Lists), access settings for your tailnet.
 
-The coordination server is very light which allows Tailscale to be able to offer it with a free plan. Oh yeah, did I forgot to mention that the basic plan is **free** forever and is most likely more than most people need. It's awesome!
+The coordination server is very light which allows Tailscale to be able to offer it with a free plan without going bankrupt. Oh yeah, did I forgot to mention that the basic plan is **free** forever and is most likely more than most people need. It's awesome!
 
 ### The DERP network
 
 I talked about how Tailscale usually operates using peer to peer connections, this is done by various means of NAT transversal, however when this isn't possible they have built up a network called the DERP network. This network works as a relay, basically your device connects to it and says I wanna go to my second device and it just sends forward the data. Of course this data has been encrypted and Tailscale can't actually see the data.
 
+### Tailscale IPs
+
+The system they came up with is in my opinion a really cool way on how we can *"abuse"* the reserved IPs.
+
+Each tailscale device get's their own Tailscale IP. However to avoid the IP collection with any other devices on your normal or the global network they decided to use the IP space 100.x.y.z to avoid any collisions.
+
+The 100.x.y.z space is normally reserved for the CGNAT *(Carrier Grade NAT)*. The CGNAT is a address space that is used between/within ISPs, which means these ips are unused for private networks, this makes it a perfect space for Tailscale to use.
+
 ## Installing Tailscale
 
-Let's get started by installing tailscale on your computer. Since installation instructions can sometimes change I recommend you to instead visit [their download page](https://tailscale.com/download/). They have a handy installation script at the page I linked to but if you are on linux, your package manager might already have tailscale added, but your result may vary.
+Let's get started by installing tailscale on your computer so we can play around with it.
+
+Since installation instructions can sometimes change I recommend you to instead visit [their download page](https://tailscale.com/download/). They have a handy installation script at the page I linked to, but if you are on linux, your package manager might already have tailscale added, but your result may vary.
 
 For me *(I use Arch btw)* it was as simple as telling pacman to install tailscale :)
 
@@ -64,14 +74,16 @@ sudo pacman -S tailscale
 
 ## Usage
 
-As I myself as previously stated is an arch linux user, I am going to go thru how this works on Linux. For other OS's, please refer to the [Tailscale's documentation](https://tailscale.com/kb/).
+As I previously stated, I am an arch linux user so therefore I am going to go thru how this works on Linux. For other OS's, please refer to [Tailscale's documentation](https://tailscale.com/kb/).
 
 ::: note
-On Linux, you sometimes have to manually enable the daemon for tailscale, called `tailscaled`. Normally this is done via systemd, but this may vary depending on your circumstances. In the case of systemd, this is how it's done.
+On Linux, you sometimes have to manually enable the daemon for tailscale, called `tailscaled`. You will be told if such action is needed when trying to use it.
+
+Normally this is done via systemd, but this may vary depending on your circumstances. In the case of systemd, this is how it's done.
 
 ```shell
-sudo systemctl enable tailscaled 
-sudo systemctl start tailscaled
+$ sudo systemctl enable tailscaled 
+$ sudo systemctl start tailscaled
 ```
 :::
 
@@ -94,11 +106,31 @@ Before we can connect to the network we need to create an account. Either hop ov
 
 #### Connecting to the network
 
-To connect your device to your tailnet, you should run the following command which will return a link for you to open in your browser where you authenticate.
+To connect your device to your tailnet, you have to first login and pair it with your account. This is extremely simple, just follow the steps below which will give you a link you should open in your preferred web browser.
 
 ```shell
- sudo tailscale up
-### test
+$ sudo tailscale up
 
 https://login.tailscale.com/a/xxxxxxxxxxx
 ```
+
+After you have opened the link, you will be asked to login using the method you used for signing up.
+
+Following these steps should have left your device authenticated to you tailnet, congrats! Now you can add more devices to play around with.
+
+### Showing your devices
+
+Now when we have connected a couple of devices to our tailnet, we can check them and see what their Tailscale IPs are.
+
+```shell
+$ tailscale status
+
+100.23.13.60   my-first-computer          jakob.helgesson@ linux   -
+100.102.40.23  my-second-computer         jakob.helgesson@ linux   -
+```
+
+### Exit Nodes
+
+Exit nodes makes tailscale sort of act like the traditional VPN. Using an exit node you still have access to all your Tailscale devices but all your other traffic will instead be routed to the exit node.
+
+Exit nodes can be really useful when you are for example trying to access a national tv service while your on vacation. Or just want secure your connection on a public wifi network.
