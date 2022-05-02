@@ -135,8 +135,10 @@ main.blog {
 		border-top: 0.25rem solid $disabled-color;
 	}
 
-	img {
-		max-width: 100px;
+	img:not(.no-style) {
+		border-radius: 1rem;
+		border: 0.5rem solid $accent-color;
+		max-width: 100%;
 	}
 
 	code,

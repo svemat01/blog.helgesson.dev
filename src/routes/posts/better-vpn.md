@@ -4,6 +4,7 @@ description: Let's find out what Tailscale is and how it works!
 author: Jakob Helgesson
 published: 2022-04-21
 modified: 2022-04-21
+banner: https://blog.helgesson.dev/post-banners/devblog-better-vpn.png
 tags: {
     "Network": {
         color: "#e5f31f",
@@ -22,6 +23,8 @@ First of all, I am not sponsored or endorsed by Tailscale (hit me up tho Tailsca
 Unlike most other VPNs, Tailscale is not used to access the global internet *(or at least usually, more on that later)*. Instead it is used to create your own mesh network like your own little LAN but globally accessible. If you have ever used LogMeIn Hamachi to play games or the like with your friends, you will probably know what I'm talking about.
 
 For me the most amazing thing about Tailscale is how it is even able to work behind firewalls *(Unless tailscale is specifically blocked)*. This means that you could access a device that normally wouldn't allow vpn hosting as it would be blocked by the firewall. So yes this finally means you could hide a server at your school, however I do not condone it.
+
+Let's go thru how Tailscale is made, basic install/use and how I am using it in my daily life.
 
 ## How is Tailscale built?
 
@@ -134,3 +137,51 @@ $ tailscale status
 Exit nodes makes tailscale sort of act like the traditional VPN. Using an exit node you still have access to all your Tailscale devices but all your other traffic will instead be routed to the exit node.
 
 Exit nodes can be really useful when you are for example trying to access a national tv service while your on vacation. Or just want secure your connection on a public wifi network.
+
+To be able to use exit nodes, the device that should be acting as such firstly needs to request to be allowed that. This is done with a small modification to the startup command.
+
+```shell
+$ tailscale up --advertise-exit-node
+```
+
+Then you should open up the [admin panel](https://login.tailscale.com/admin/machines). The node will now have a little tag saying `Exit Node (i)`.
+
+![Image of node in admin panel](https://cdn.discordapp.com/attachments/778235420549840906/970777749214076989/allow-exit-node.png)
+
+Click on the three dots, `Edit route settings` and then click on `Use as exit node`
+
+Now on the device you want to connect to the exit node with, you can use the `tailscale up` command.
+
+```shell
+$ tailscale up --exit-node "(IP or base name)"
+```
+
+To stop using an exit node, run the same command but now with an empty string.
+
+```shell
+$ tailscale up --exit-node ""
+```
+
+---
+
+That concludes the basics of how tailscale works. With the setup above, you should now have access to all devices on your tailnet as if you were on the same LAN.
+
+If you wanna learn more about how to use Tailscale, then I would recommend you to look at their [documentation](https://tailscale.com/kb/). But for now let's explore how I use Tailscale.
+
+## How I use Tailscale
+
+Tailscale has been such an amazing tool for me in so many ways.
+
+I have it deployed on all my servers and personal devices. That includes my phone, laptop and my desktop.
+
+Having Tailscale on all my servers allows me to only expose the ports that are specifically needed, no more ssh left open and no more annoying traditional vpn on each server to keep things private.
+
+Meanwhile on my personal devices, I use one raspberry pi at home and one vm in a datacenter as exit nodes, this means I have a way to access my safe home network while away but also access the network of my vm if I need a vpn that is a bit more anonymous.
+
+## Final points
+
+I really hope you enjoyed this short getting started / me sharing my experience with tailscale. If you have any further questions, you can reach out to me via [E-Mail (jakob@helgesson.dev)](mailto:jakob@helgesson.dev) or other contact information available on my [portfolio (jakobhelgesson.com)](https://jakobhelgesson.com).
+
+And as always, thank you 100x for spending some time with me and reading this ❤️
+
+~ Jakob Helgesson

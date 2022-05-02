@@ -9,7 +9,7 @@
 {#if profile}
 	<a href={profile.url}>
 		<span class="profile">
-			<img class="logo" src={profile.logo} alt={profile.displayName} />
+			<img class="logo no-style" src={profile.logo} alt={profile.displayName} />
 			<span class="profile-text">
 				{profile.displayName}
 			</span>
