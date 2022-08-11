@@ -20,8 +20,6 @@ export interface Props {
 const { post } = Astro.props as Props
 
 const { default: Post } = post
-
-console.log({post});
 ---
 
 <PostLayout post={post} />

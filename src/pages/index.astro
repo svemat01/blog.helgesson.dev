@@ -1,8 +1,33 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro'
+import PostPreview from '$components/PostPreview.astro';
+import { Post, postProcessPost } from '$utils/post';
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const posts = (await Astro.glob<Post>("../posts/**/*.mdx"))
+    .map(post => ({ ...post, frontmatter: postProcessPost(post.frontmatter, post.file) }));
+const undraftedPosts = posts.filter((post) => !post.frontmatter.draft).sort(
+    // @ts-ignore
+    (a, b) => b.frontmatter.date - a.frontmatter.date
+);
 ---
 
+<BaseLayout title="Devblog">
+    <div class="posts">
+        {undraftedPosts.map((post) => (
+        <PostPreview post={post} />
+        ))}
+    </div>
+</BaseLayout>
 
-<MainLayout>
-    <h1>Test</h1>
-</MainLayout>
+<style lang="scss">
+    .posts {
+        width: 100%;
+        max-width: 700px;
+
+        margin-inline: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+</style>

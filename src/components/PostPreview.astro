@@ -1,0 +1,97 @@
+---
+import { readableDate } from '$utils/helpers';
+import type { Post } from '$utils/post';
+import type { MarkdownInstance } from 'astro';
+
+export interface Props {
+    post: MarkdownInstance<Post>
+}
+const { post } = Astro.props as Props
+
+const { frontmatter } = post
+
+const url = '/' + frontmatter.slug
+
+const formatedDate = readableDate(frontmatter.date);
+---
+
+<section>
+    <h1><a href={url}>{frontmatter.title}</a></h1>
+    <p class="description"><a href={url}>{frontmatter.description}</a></p>
+    <p class="data">
+        <a href={url}>
+            <span class="author">{frontmatter.author}</span>
+            <span class="seperator">/</span>
+            <span class="date">{formatedDate}</span>
+        </a>
+    </p>
+</section>
+
+<style lang="scss">
+    section {
+        @media screen and (max-width: $breakpoint-sm) {
+            text-align: center;
+        }
+    }
+
+    h1 {
+        font-size: var(--font-heading);
+
+        position: relative;
+
+        @media screen and (min-width: $breakpoint-lg) {
+            &::before {
+                text-align: right;
+
+                content: "#";
+
+                position: absolute;
+
+                left: -2rem;
+
+                color: $brand-color;
+            }
+        }
+    }
+
+    .description {
+        font-size: var(--font-text);
+        font-style: italic;
+    }
+
+    .data {
+        font-size: var(--font-text);
+        font-style: italic;
+        font-weight: 200;
+
+        color: $gray-color;
+
+        @media screen and (min-width: $breakpoint-sm) {
+            &::before {
+                text-align: right;
+
+                content: "-";
+
+                // position: absolute;
+
+                // margin-right: 0.6rem;
+
+                color: $brand-color;
+            }
+        }
+
+        span {
+            @media (max-width: $breakpoint-sm) {
+                display: block;
+            }
+        }
+
+        .seperator {
+            color: $brand-color;
+
+            @media (max-width: $breakpoint-sm) {
+                display: none;
+            }
+        }
+    }
+</style>
