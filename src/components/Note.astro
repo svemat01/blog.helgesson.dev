@@ -33,25 +33,36 @@ const type = props.type ?? 'note';
             font-size: var(--font-text);
         }
 
-        &.warning {
+        &.caution {
             // border: 0.4rem solid #fc9919;
-            border-left: 0.6rem solid $cont-warning-color;
+            border-left: 0.6rem solid $pink-color;
 
-            background-color: $cont-warning-background;
+            background-color: $pink-color-trans;
 
             p.title {
-                color: $cont-warning-color;
+                color: $pink-color;
+            }
+        }
+
+        &.warning {
+            // border: 0.4rem solid #fc9919;
+            border-left: 0.6rem solid $orange-color;
+
+            background-color: $orange-color-trans;
+
+            p.title {
+                color: $orange-color;
             }
         }
 
         &.note {
             // border: 0.4rem solid #fc9919;
-            border-left: 0.6rem solid $cont-tip-color;
+            border-left: 0.6rem solid $blue-color;
 
-            background-color: $cont-tip-background;
+            background-color: $blue-color-trans;
 
             p.title {
-                color: $cont-tip-color;
+                color: $blue-color;
             }
         }
     }

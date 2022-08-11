@@ -92,6 +92,10 @@ article {
         margin-left: 1rem;
     }
 
+    p > a {
+        color: $pink-color;
+    }
+
     p {
         line-height: 2.4rem;
 
@@ -99,7 +103,9 @@ article {
     }
 
     blockquote {
-        border-left: 0.4rem solid $brand-color;
+        border-radius: 0.5rem;
+        border-left: 0.6rem solid $brand-color;
+
         padding: 1rem;
         padding-left: 2rem;
 
@@ -122,27 +128,25 @@ article {
     }
 
     pre {
-
         border-radius: 0.5rem;
 
         background-color: $dark-light-color !important;
 
         overflow-x: auto;
 
-		code,
-		code * {
-			font-size: var(--font-text);
-			font-family: "JetBrains Mono", monospace !important;
-		}
+        code,
+        code * {
+            font-size: var(--font-text);
+            font-family: "JetBrains Mono", monospace !important;
+        }
 
-		.code-container {
-			margin: 1.4rem;
-		}
+        .code-container {
+            margin: 1.4rem;
+        }
 
         .language-id {
             display: none;
         }
-		
     }
 
     :not(.code-container) > code {

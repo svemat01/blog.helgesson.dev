@@ -7,7 +7,7 @@ tags: ["test"]
 draft: true
 ---
 
-import Note from '$components/Note.astro'
+import Note from "$components/Note.astro";
 
 # h1 Heading 8-)
 
@@ -248,7 +248,17 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 
 ### [Custom containers](https://github.com/markdown-it/markdown-it-container)
 
+<Note type="caution ">
+    Dangerous code
+
+    ```sh
+    #!/bin/sh
+    echo "Here be dragons"
+    ```
+</Note>
+
 <Note type="warning">*here be dragons*</Note>
+
 
 <Note type="note">_here be dragons once upon a time_</Note>
 
