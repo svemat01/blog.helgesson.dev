@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 
 import mdx from "@astrojs/mdx";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeCollectHeadings from "@astrojs/mdx/rehypeCollectHeadings"
 
 import remarkSectionize from "remark-sectionize";
 

@@ -221,47 +221,4 @@ article {
             }
         }
     }
-
-    // remark Containers
-    .remark-container {
-        border-radius: 0.5rem;
-
-        width: fit-content;
-        max-width: 100%;
-
-        padding: 2rem 2.5rem;
-
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-
-        p.title {
-            margin-top: 0;
-
-            font-weight: 600;
-            font-size: var(--font-text);
-        }
-
-        &.warning {
-            // border: 0.4rem solid #fc9919;
-            border-left: 0.6rem solid $cont-warning-color;
-
-            background-color: $cont-warning-background;
-
-            p.title {
-                color: $cont-warning-color;
-            }
-        }
-
-        &.note {
-            // border: 0.4rem solid #fc9919;
-            border-left: 0.6rem solid $cont-tip-color;
-
-            background-color: $cont-tip-background;
-
-            p.title {
-                color: $cont-tip-color;
-            }
-        }
-    }
 }
