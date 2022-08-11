@@ -6,6 +6,21 @@
 
 :root {
     color-scheme: dark;
+
+    --font-text: 1.8rem;
+
+    --font-heading-big: 4rem;
+    --font-heading: 2.4rem;
+    --font-heading-small: 2rem;
+    --font-header: 3rem;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        --font-text: 1.8rem;
+    
+        --font-heading-big: 3rem;
+        --font-heading: 2.2rem;
+        --font-heading-small: 2rem;
+    }
 }
 
 html {
@@ -15,7 +30,6 @@ html {
 }
 
 body {
-    font-family: Roboto, Arial;
     font-family: 'JetBrains Mono', Arial;
 
     background: $dark-color;
