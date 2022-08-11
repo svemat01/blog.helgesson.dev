@@ -1,0 +1,27 @@
+---
+import PostLayout from '$layouts/PostLayout.astro';
+import { getSlugFromFile } from '$utils/helpers';
+import { Post, postProcessPost } from '$utils/post';
+import type { GetStaticPaths, MarkdownInstance } from 'astro'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    const posts = await Astro.glob<Post>("../posts/**/*.mdx");
+    return posts.map((post) => {
+        const augmentedFrontmatter = postProcessPost(post.frontmatter, post.file)
+        return {
+            params: { slug: getSlugFromFile(post.file) },
+            props: { post: { ...post, frontmatter: augmentedFrontmatter } },
+        }
+    })
+}
+export interface Props {
+    post: MarkdownInstance<Post>
+}
+const { post } = Astro.props as Props
+
+const { default: Post } = post
+
+console.log({post});
+---
+
+<PostLayout post={post} />
