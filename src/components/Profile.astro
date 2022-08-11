@@ -1,0 +1,19 @@
+---
+import { profiles } from '$data/profiles';
+
+export interface Props {
+    name: keyof typeof profiles;
+};
+
+const { name: keyName } = Astro.props as Props;
+
+const { name } = profiles[keyName] ?? {name: 'MISSING PROFILE'};
+---
+
+<span>{name}</span>
+
+<style lang="scss">
+    span {
+        color: $blue-color
+    }
+</style>
