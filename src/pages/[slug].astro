@@ -2,7 +2,7 @@
 import PostLayout from '$layouts/PostLayout.astro';
 import { getSlugFromFile } from '$utils/helpers';
 import { Post, postProcessPost } from '$utils/post';
-import type { GetStaticPaths, MarkdownInstance } from 'astro'
+import type { GetStaticPaths, MDXInstance } from 'astro'
 
 export const getStaticPaths: GetStaticPaths = async () => {
     let posts = await Astro.glob<Post>("../posts/**/*.mdx");
@@ -20,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     })
 }
 export interface Props {
-    post: MarkdownInstance<Post>
+    post: MDXInstance<Post>
 }
 const { post } = Astro.props as Props
 

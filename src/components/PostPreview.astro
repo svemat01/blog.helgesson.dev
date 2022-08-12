@@ -1,10 +1,10 @@
 ---
 import { readableDate } from '$utils/helpers';
 import type { Post } from '$utils/post';
-import type { MarkdownInstance } from 'astro';
+import type { MDXInstance } from 'astro';
 
 export interface Props {
-    post: MarkdownInstance<Post>
+    post: MDXInstance<Post>
 }
 const { post } = Astro.props as Props
 

@@ -6,6 +6,4 @@ export interface Props {
 const { href } = Astro.props as Props;
 ---
 
-<a href={href} target="_blank">
-    <slot />
-</a>
+<a href={href} target="_blank"><slot /></a>

@@ -1,8 +1,8 @@
 import { Post, postProcessPost } from "$utils/post";
-import type { MarkdownInstance } from "astro";
+import type { MDXInstance } from "astro";
 
 export async function get() {
-    const rawPosts = import.meta.glob<true, string, MarkdownInstance<Post>>(
+    const rawPosts = import.meta.glob<true, string, MDXInstance<Post>>(
         "../posts/**/*.mdx",
         { eager: true }
     );

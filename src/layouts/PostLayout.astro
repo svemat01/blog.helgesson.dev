@@ -1,26 +1,24 @@
 ---
 import '../styles/blogPost.scss'
 import type { Post } from '$utils/post';
-import type { MarkdownInstance } from 'astro';
+import type { MDXInstance } from 'astro';
 import BaseLayout from './BaseLayout.astro'
 import PostTitle from '$components/PostTitle.astro';
 import type { AstroComponentFactory } from 'astro/dist/types/runtime/server';
 import Link from '$components/Link.astro';
 
 export interface Props {
-    post: MarkdownInstance<Post>
+    post: MDXInstance<Post>
 }
 const { post } = Astro.props as Props
 
-const { frontmatter } = post
-
-const PostContent = post.default as unknown as AstroComponentFactory
+const { frontmatter, Content } = post
 
 ---
 
 <BaseLayout title={frontmatter.title}>
     <PostTitle title={frontmatter.title} description={frontmatter.description} author={frontmatter.author} date={frontmatter.date} />
     <article>
-        <PostContent components={{a: Link}} />
+        <Content components={{a: Link}} />
     </article>
 </BaseLayout>
