@@ -15,6 +15,7 @@ export type Post = {
     tags: string[];
     draft: boolean;
     slug: string;
+    minutesRead: string;
 };
 
 const postSchema: JSONSchemaType<Omit<Post, "date"> & { date: object }> = {
@@ -27,6 +28,7 @@ const postSchema: JSONSchemaType<Omit<Post, "date"> & { date: object }> = {
         tags: { type: "array", items: { type: "string" } },
         draft: { type: "boolean" },
         slug: { type: "string" },
+        minutesRead: { type: "string" },
     },
     required: [
         "title",
