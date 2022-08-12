@@ -1,0 +1,60 @@
+---
+import BaseLayout from '$layouts/BaseLayout.astro'
+
+---
+
+<BaseLayout title="404">
+    <h1>404</h1>
+    <h2>Post not found</h2>
+    <h3><a href="/">Click to go back to homepage</a></h3>
+</BaseLayout>
+
+<style lang="scss">
+    h1 {
+        font-size: 30rem;
+        font-weight: 500;
+        line-height: 30rem;
+        text-align: center;
+
+        color: $brand-color;
+
+        @media (max-width: $breakpoint-lg) {
+            font-size: 20rem;
+            line-height: 20rem;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            font-size: 15rem;
+            line-height: 15rem;
+        }
+
+    }
+
+    h2 {
+        font-size: 7rem;
+        font-weight: 400;
+        text-align: center;
+
+        color: $blue-color;
+
+        @media (max-width: $breakpoint-md) {
+            font-size: 5rem;
+            line-height: 5rem;
+        }
+    }
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+        }
+    }
+</style>
