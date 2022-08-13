@@ -4,7 +4,6 @@ import type { Post } from '$utils/post';
 import type { MDXInstance } from 'astro';
 import BaseLayout from './BaseLayout.astro'
 import PostTitle from '$components/PostTitle.astro';
-import type { AstroComponentFactory } from 'astro/dist/types/runtime/server';
 import Link from '$components/Link.astro';
 
 export interface Props {
@@ -17,7 +16,8 @@ const { frontmatter, Content } = post
 ---
 
 <BaseLayout title={frontmatter.title}>
-    <PostTitle title={frontmatter.title} description={frontmatter.description} author={frontmatter.author} date={frontmatter.date} />
+    <PostTitle title={frontmatter.title} description={frontmatter.description} author={frontmatter.author}
+        date={frontmatter.date} readingTime={frontmatter.minutesRead} />
     <article>
         <Content components={{a: Link}} />
     </article>

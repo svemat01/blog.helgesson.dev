@@ -6,8 +6,9 @@ export interface Props {
     description: string;
     author: string;
     date: Date;
+    readingTime: string;
 }
-const { title, description, author, date } = Astro.props as Props
+const { title, description, author, date, readingTime } = Astro.props as Props
 
 const formatedDate = readableDate(date);
 ---
@@ -16,6 +17,7 @@ const formatedDate = readableDate(date);
     <h1>{title}</h1>
     <p class="description">{description}</p>
     <p class="data">{author} <span class="brand">/</span> {formatedDate}</p>
+    <p class="reading">📖 {readingTime}</p>
     <!-- <div class="sub">
         <p>{author}</p>
         <div class="sep" />
@@ -64,6 +66,15 @@ const formatedDate = readableDate(date);
                     display: none;
                 }
             }
+        }
+
+        .reading {
+            font-size: var(--font-heading-small);
+            font-weight: 200;
+
+            color: $gray-color;
+
+            margin-top: 0.8rem;
         }
     }
 </style>
