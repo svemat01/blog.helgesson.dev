@@ -1,0 +1,13 @@
+{
+    "headers": [
+        {
+            "source": "/posts.json",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                }
+            ]
+        }
+    ]
+}
